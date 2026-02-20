@@ -9,6 +9,7 @@ const translations = {
     team: { es: "Equipo", en: "Team", ca: "Equip" },
     usecases: { es: "Casos", en: "Cases", ca: "Casos" },
     eaa: { es: "EAA 2025", en: "EAA 2025", ca: "EAA 2025" },
+    services: { es: "Servicios", en: "Services", ca: "Serveis" },
   },
   hero: {
     headline: {
@@ -119,38 +120,38 @@ const translations = {
   team: {
     title: { es: "Nuestro Equipo", en: "Our Team", ca: "El nostre Equip" },
     subtitle: {
-      es: "Neurocientíficos, ingenieros y estrategas unidos por una misión: hacer la ciencia del cerebro accesible para los negocios.",
-      en: "Neuroscientists, engineers and strategists united by one mission: making brain science accessible for business.",
-      ca: "Neurocientífics, enginyers i estrategs units per una missió: fer la ciència del cervell accessible per als negocis.",
+      es: "Ciencia · Negocio · Diseño — 40+ años de experiencia combinada en neurociencia, investigación y estrategia.",
+      en: "Science · Business · Design — 40+ combined years in neuroscience, research and strategy.",
+      ca: "Ciència · Negoci · Disseny — 40+ anys d'experiència combinada en neurociència, recerca i estratègia.",
     },
     members: [
       {
         name: "Katerina Akhmad",
-        role: { es: "CEO & Neurociencia", en: "CEO & Neuroscience", ca: "CEO & Neurociència" },
+        role: { es: "CEO & Business Lead", en: "CEO & Business Lead", ca: "CEO & Business Lead" },
         bio: {
-          es: "PhD en neurociencia cognitiva. 10 años diseñando estudios de comportamiento del consumidor.",
-          en: "PhD in cognitive neuroscience. 10 years designing consumer behavior studies.",
-          ca: "Doctorat en neurociència cognitiva. 10 anys dissenyant estudis de comportament del consumidor.",
+          es: "7+ años en UX Research. 15+ años en FMCG & Beauty (Swarovski, Bourjois Paris, Amway). 30+ proyectos de investigación en 50+ mercados. Certified Scrum Master.",
+          en: "7+ years UX Research. 15+ years FMCG & Beauty (Swarovski, Bourjois Paris, Amway). 30+ research projects across 50+ markets. Certified Scrum Master.",
+          ca: "7+ anys en UX Research. 15+ anys en FMCG & Beauty (Swarovski, Bourjois Paris, Amway). 30+ projectes de recerca en 50+ mercats. Certified Scrum Master.",
         },
         initials: "KA",
       },
       {
-        name: "Ivan Brak",
-        role: { es: "CTO & Biosensores", en: "CTO & Biosensors", ca: "CTO & Biosensors" },
+        name: "Ivan Brak, PhD",
+        role: { es: "Chief Scientist · Psicofisiología", en: "Chief Scientist · Psychophysiology", ca: "Chief Scientist · Psicofisiologia" },
         bio: {
-          es: "Ingeniero de biosensores ex-MIT. Arquitecto del sistema NeuroScore™.",
-          en: "Biosensor engineer ex-MIT. Architect of the NeuroScore™ system.",
-          ca: "Enginyer de biosensors ex-MIT. Arquitecte del sistema NeuroScore™.",
+          es: "PhD Psicofisiología. 18+ años, 40+ publicaciones científicas en Molecular Psychiatry Q1, Brain Stimulation. EEG, eye-tracking, fMRI, GSR, ECG. Diseñador de la metodología NeuroScore™.",
+          en: "PhD Psychophysiology. 18+ years, 40+ publications in Molecular Psychiatry Q1, Brain Stimulation. EEG, eye-tracking, fMRI, GSR, ECG. Architect of NeuroScore™ methodology.",
+          ca: "Doctorat en Psicofisiologia. 18+ anys, 40+ publicacions en Molecular Psychiatry Q1, Brain Stimulation. EEG, eye-tracking, fMRI, GSR, ECG. Arquitecte de la metodologia NeuroScore™.",
         },
         initials: "IB",
       },
       {
         name: "Anna Tsimerman",
-        role: { es: "Directora de Insights", en: "Head of Insights", ca: "Directora d'Insights" },
+        role: { es: "Head of Design · UI/UX", en: "Head of Design · UI/UX", ca: "Head of Design · UI/UX" },
         bio: {
-          es: "Estratega de UX con background en psicología del consumidor y neuromarketing aplicado.",
-          en: "UX strategist with a background in consumer psychology and applied neuromarketing.",
-          ca: "Estratega de UX amb background en psicologia del consumidor i neuromarketing aplicat.",
+          es: "5+ años en UI/UX. Clientes han recaudado $10M+. 300+ empresas usan sus plataformas. Especialista en Fintech, SaaS, IA. Redujo carga cognitiva un 40% en entornos crypto complejos.",
+          en: "5+ years UI/UX. Clients raised $10M+. 300+ companies use her platforms. Expert in Fintech, SaaS, AI. Reduced cognitive load by 40% in complex crypto environments.",
+          ca: "5+ anys UI/UX. Clients han recaptat $10M+. 300+ empreses usen les seves plataformes. Especialista en Fintech, SaaS, IA. Va reduir la càrrega cognitiva un 40% en entorns crypto complexos.",
         },
         initials: "AT",
       },
