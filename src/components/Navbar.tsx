@@ -16,11 +16,15 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <span className="font-display text-xl font-bold text-gradient">NeuroInsight Labs</span>
         <div className="hidden md:flex items-center gap-6">
-          {(["problem", "howItWorks", "proof", "pricing"] as const).map((key) => (
+          {(["problem", "howItWorks", "proof", "usecases", "eaa", "team", "pricing"] as const).map((key) => (
             <button
               key={key}
               onClick={() => scrollTo(key === "proof" ? "social" : key)}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className={`text-sm transition-colors ${
+                key === "eaa"
+                  ? "text-[hsl(30_90%_60%)] hover:text-[hsl(30_90%_75%)] font-semibold"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               {t.nav[key][lang]}
             </button>
