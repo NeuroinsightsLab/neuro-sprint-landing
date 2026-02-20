@@ -2,6 +2,13 @@ import { useLang } from "@/lib/LanguageContext";
 import t from "@/lib/i18n";
 import { Quote, TrendingUp } from "lucide-react";
 
+const trustNumbers = [
+  { value: "18%", label: { es: "Aumento de CTR post-NeuroScore", en: "CTR increase post-NeuroScore", ca: "Augment de CTR post-NeuroScore" }, prefix: "+" },
+  { value: "15%", label: { es: "Uplift medio en clientes", en: "Average client uplift", ca: "Uplift mitjà en clients" }, prefix: "+" },
+  { value: "48h", label: { es: "De asset a informe accionable", en: "From asset to actionable report", ca: "D'asset a informe accionable" }, prefix: "" },
+  { value: "95%", label: { es: "Decisiones de compra inconscientes", en: "Unconscious purchase decisions", ca: "Decisions de compra inconscients" }, prefix: "" },
+];
+
 const SocialProof = () => {
   const { lang } = useLang();
 
@@ -13,6 +20,18 @@ const SocialProof = () => {
         <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-16">
           {t.social.title[lang]}
         </h2>
+
+        {/* Trust numbers */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16">
+          {trustNumbers.map((n, i) => (
+            <div key={i} className="glass-card rounded-2xl p-6 text-center">
+              <div className="font-display text-3xl font-bold text-gradient mb-1">
+                {n.prefix}{n.value}
+              </div>
+              <div className="text-xs text-muted-foreground">{n.label[lang]}</div>
+            </div>
+          ))}
+        </div>
 
         {/* Logos */}
         <div className="flex justify-center gap-12 mb-16 flex-wrap">
@@ -45,3 +64,4 @@ const SocialProof = () => {
 };
 
 export default SocialProof;
+

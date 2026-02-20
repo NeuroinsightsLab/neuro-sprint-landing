@@ -7,7 +7,9 @@ import SocialProof from "@/components/SocialProof";
 import UseCasesSection from "@/components/UseCasesSection";
 import EAASection from "@/components/EAASection";
 import TeamSection from "@/components/TeamSection";
+import ServicesSection from "@/components/ServicesSection";
 import PricingSection from "@/components/PricingSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -22,7 +24,9 @@ const Index = () => {
         <UseCasesSection />
         <EAASection />
         <TeamSection />
+        <ServicesSection />
         <PricingSection />
+        <ContactSection />
         <Footer />
       </div>
     </LanguageProvider>
@@ -30,4 +34,3 @@ const Index = () => {
 };
 
 export default Index;
-
