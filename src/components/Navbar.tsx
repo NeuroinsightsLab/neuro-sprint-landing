@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
-        <span className="font-display text-xl font-bold text-gradient">NeuroInsight Labs</span>
+        <span className="font-display text-xl font-bold text-gradient">Decoder</span>
         <div className="hidden md:flex items-center gap-6">
           {(["problem", "howItWorks", "proof", "usecases", "eaa", "team", "services", "pricing"] as const).map((key) => (
             <button
