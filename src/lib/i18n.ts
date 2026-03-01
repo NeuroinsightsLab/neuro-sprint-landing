@@ -35,9 +35,9 @@ const translations = {
   },
   problem: {
     title: {
-      es: "¿Por qué necesitas NeuroInsight?",
-      en: "Why do you need NeuroInsight?",
-      ca: "Per què necessites NeuroInsight?",
+      es: "¿Por qué necesitas Decoder?",
+      en: "Why do you need Decoder?",
+      ca: "Per què necessites Decoder?",
     },
     traditional: { es: "Focus Groups Tradicionales", en: "Traditional Focus Groups", ca: "Focus Groups Tradicionals" },
     neuro: { es: "NeuroSprint™", en: "NeuroSprint™", ca: "NeuroSprint™" },

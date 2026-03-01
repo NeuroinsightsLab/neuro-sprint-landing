@@ -20,7 +20,7 @@ const ContactSection = () => {
     request: { es: "Solicitar Propuesta", en: "Request Proposal", ca: "Sol·licitar Proposta" },
     linkedin: { es: "LinkedIn", en: "LinkedIn", ca: "LinkedIn" },
     address: "Barcelona, España",
-    emailValue: "hello@neuroinsightlabs.com",
+    emailValue: "hello@decoder.agency",
     phoneValue: "+34 600 000 000",
   };
 
@@ -81,12 +81,12 @@ const ContactSection = () => {
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">{labels.linkedin[lang]}</div>
                 <a
-                  href="https://linkedin.com/company/neuroinsightlabs"
+                  href="https://linkedin.com/company/decoder-agency"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium text-foreground hover:text-primary transition-colors"
                 >
-                  /neuroinsightlabs
+                  /decoder-agency
                 </a>
               </div>
             </div>
