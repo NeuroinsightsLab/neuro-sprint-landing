@@ -20,7 +20,7 @@ const PricingSection = () => {
         <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
           <div className="glass-card rounded-2xl p-8 flex flex-col">
             <h3 className="font-display text-xl font-bold mb-2">{t.pricing.remote.name[lang]}</h3>
-            <div className="text-4xl font-bold text-gradient mb-6">{t.pricing.remote.price}</div>
+            <div className="text-4xl font-bold text-primary mb-6">{t.pricing.remote.price}</div>
             <ul className="space-y-3 flex-1 mb-8">
               {t.pricing.remote.features[lang].map((f, i) => (
                 <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -29,7 +29,7 @@ const PricingSection = () => {
                 </li>
               ))}
             </ul>
-            <a href="#" className="block text-center rounded-lg border border-primary text-primary font-semibold px-6 py-3 hover:bg-primary/10 transition-colors">
+            <a href="#" className="block text-center rounded-full border border-primary text-primary font-semibold px-6 py-3 hover:bg-primary/10 transition-colors">
               {t.pricing.cta[lang]}
             </a>
           </div>
@@ -39,16 +39,16 @@ const PricingSection = () => {
               {t.pricing.lab.popular[lang]}
             </div>
             <h3 className="font-display text-xl font-bold mb-2">{t.pricing.lab.name[lang]}</h3>
-            <div className="text-4xl font-bold text-gradient mb-6">{t.pricing.lab.price}</div>
+            <div className="text-4xl font-bold text-primary mb-6">{t.pricing.lab.price}</div>
             <ul className="space-y-3 flex-1 mb-8">
               {t.pricing.lab.features[lang].map((f, i) => (
                 <li key={i} className="flex items-center gap-2 text-sm text-foreground">
-                  <Check className="w-4 h-4 text-success shrink-0" />
+                  <Check className="w-4 h-4 text-primary shrink-0" />
                   {f}
                 </li>
               ))}
             </ul>
-            <a href="#" className="block text-center rounded-lg bg-primary text-primary-foreground font-semibold px-6 py-3 hover:brightness-110 transition-all animate-pulse-glow">
+            <a href="#" className="block text-center rounded-full bg-primary text-primary-foreground font-semibold px-6 py-3 hover:brightness-110 transition-all animate-pulse-glow">
               <Zap className="w-4 h-4 inline mr-2" />
               {t.pricing.cta[lang]}
             </a>

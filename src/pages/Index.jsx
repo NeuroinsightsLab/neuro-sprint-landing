@@ -1,6 +1,7 @@
 import { LanguageProvider } from "@/lib/LanguageContext";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import Marquee from "@/components/Marquee";
 import ProblemSection from "@/components/ProblemSection";
 import HowItWorks from "@/components/HowItWorks";
 import SocialProof from "@/components/SocialProof";
@@ -18,8 +19,10 @@ const Index = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <HeroSection />
+        <Marquee variant="accent" />
         <ProblemSection />
         <HowItWorks />
+        <Marquee />
         <SocialProof />
         <UseCasesSection />
         <EAASection />

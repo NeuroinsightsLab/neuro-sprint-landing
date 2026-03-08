@@ -7,13 +7,13 @@ const EAASection = () => {
 
   return (
     <section id="eaa" className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(30_90%_55%/0.08),transparent_70%)]" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(30_90%_55%/0.4)] to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(82_85%_50%/0.06),transparent_70%)]" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[hsl(30_90%_55%/0.12)] border border-[hsl(30_90%_55%/0.3)] px-5 py-2 text-sm font-semibold text-[hsl(30_90%_65%)]">
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/30 px-5 py-2 text-sm font-semibold text-primary">
               <AlertTriangle className="w-4 h-4" />
               {t.eaa.badge[lang]}
             </div>
@@ -27,12 +27,12 @@ const EAASection = () => {
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 items-start">
-            <div className="glass-card rounded-2xl p-8 border border-[hsl(30_90%_55%/0.25)] text-center">
-              <AlertTriangle className="w-10 h-10 text-[hsl(30_90%_60%)] mx-auto mb-4" />
+            <div className="glass-card rounded-2xl p-8 border border-primary/25 text-center">
+              <AlertTriangle className="w-10 h-10 text-primary mx-auto mb-4" />
               <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
                 {t.eaa.fines.label[lang]}
               </div>
-              <div className="text-6xl font-display font-bold text-[hsl(30_90%_65%)] mb-2">
+              <div className="text-6xl font-display font-bold text-primary mb-2">
                 {t.eaa.fines.value}
               </div>
               <div className="text-sm text-muted-foreground">
@@ -53,7 +53,7 @@ const EAASection = () => {
                 <ul className="space-y-3">
                   {t.eaa.points.map((point, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                      <Check className="w-4 h-4 text-success shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                       <span>{point[lang]}</span>
                     </li>
                   ))}
@@ -62,7 +62,7 @@ const EAASection = () => {
 
               <a
                 href="#pricing"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[hsl(30_90%_55%)] text-[hsl(220_20%_6%)] font-bold px-6 py-4 text-base hover:brightness-110 transition-all"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground font-bold px-6 py-4 text-base hover:brightness-110 transition-all"
               >
                 <Zap className="w-5 h-5" />
                 {t.eaa.cta[lang]}
