@@ -51,7 +51,6 @@ const TeamSection = () => {
   return (
     <section id="team" className="py-24 relative">
       <div className="container mx-auto px-4">
-        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
             {t.team.title[lang]}
@@ -61,40 +60,22 @@ const TeamSection = () => {
           </p>
         </div>
 
-        {/* Team cards */}
         <div className="grid sm:grid-cols-3 gap-8 max-w-5xl mx-auto mb-20">
           {t.team.members.map((member, i) => (
-            <div
-              key={i}
-              className="glass-card rounded-2xl overflow-hidden group hover:glow-border transition-all duration-300"
-            >
-              {/* Photo */}
+            <div key={i} className="glass-card rounded-2xl overflow-hidden group hover:glow-border transition-all duration-300">
               <div className="relative h-56 overflow-hidden bg-secondary">
-                <img
-                  src={teamImages[i]}
-                  alt={member.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
+                <img src={teamImages[i]} alt={member.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
               </div>
-
-              {/* Info */}
               <div className="p-6">
-                <h3 className="font-display text-lg font-bold text-foreground mb-1">
-                  {member.name}
-                </h3>
-                <div className="text-xs font-semibold text-primary uppercase tracking-widest mb-3">
-                  {member.role[lang]}
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {member.bio[lang]}
-                </p>
+                <h3 className="font-display text-lg font-bold text-foreground mb-1">{member.name}</h3>
+                <div className="text-xs font-semibold text-primary uppercase tracking-widest mb-3">{member.role[lang]}</div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{member.bio[lang]}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Three Pillars */}
         <div className="mb-20">
           <h3 className="font-display text-xl font-bold text-center text-gradient mb-10">
             {lang === "es" ? "Tres Pilares, Una Misión" : lang === "en" ? "Three Pillars, One Mission" : "Tres Pilars, Una Missió"}
@@ -117,7 +98,6 @@ const TeamSection = () => {
           </div>
         </div>
 
-        {/* Trust Stats */}
         <div className="glass-card rounded-2xl p-10 max-w-5xl mx-auto">
           <p className="text-center text-xs uppercase tracking-widest text-muted-foreground mb-8">
             {lang === "es" ? "Ciencia · Negocio · Diseño — 40+ años combinados" : lang === "en" ? "Science · Business · Design — 40+ combined years" : "Ciència · Negoci · Disseny — 40+ anys combinats"}

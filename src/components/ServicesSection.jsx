@@ -7,22 +7,7 @@ import {
   ChevronRight, Send, CalendarDays, X
 } from "lucide-react";
 
-type Lang = "es" | "en" | "ca";
-
-interface ServiceItem {
-  icon: React.ReactNode;
-  label: Record<Lang, string>;
-}
-
-interface ServiceCategory {
-  id: string;
-  emoji: string;
-  title: Record<Lang, string>;
-  desc: Record<Lang, string>;
-  services: ServiceItem[];
-}
-
-const categories: ServiceCategory[] = [
+const categories = [
   {
     id: "ux",
     emoji: "🧠",
@@ -87,18 +72,11 @@ const categories: ServiceCategory[] = [
   },
 ];
 
-interface FormState {
-  name: string;
-  email: string;
-  company: string;
-  message: string;
-}
-
 const ServicesSection = () => {
   const { lang } = useLang();
   const [activeTab, setActiveTab] = useState("ux");
   const [showForm, setShowForm] = useState(false);
-  const [form, setForm] = useState<FormState>({ name: "", email: "", company: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const labels = {
@@ -119,9 +97,9 @@ const ServicesSection = () => {
     thanks: { es: "¡Gracias! Te contactaremos pronto.", en: "Thanks! We'll be in touch soon.", ca: "Gràcies! Et contactarem aviat." },
   };
 
-  const active = categories.find((c) => c.id === activeTab)!;
+  const active = categories.find((c) => c.id === activeTab);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
     setTimeout(() => { setShowForm(false); setSubmitted(false); setForm({ name: "", email: "", company: "", message: "" }); }, 3000);
@@ -131,17 +109,11 @@ const ServicesSection = () => {
     <section id="services" className="py-24 relative">
       <div className="absolute inset-0 hero-glow opacity-20" />
       <div className="container mx-auto px-4 relative z-10">
-        {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-            {labels.title[lang]}
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            {labels.subtitle[lang]}
-          </p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">{labels.title[lang]}</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">{labels.subtitle[lang]}</p>
         </div>
 
-        {/* Tabs */}
         <div className="flex flex-wrap justify-center gap-3 mb-10">
           {categories.map((cat) => (
             <button
@@ -159,7 +131,6 @@ const ServicesSection = () => {
           ))}
         </div>
 
-        {/* Panel */}
         <div className="max-w-5xl mx-auto glass-card rounded-2xl p-8 md:p-10">
           <div className="mb-8">
             <h3 className="font-display text-2xl font-bold text-foreground mb-2">
@@ -170,34 +141,20 @@ const ServicesSection = () => {
 
           <div className="grid sm:grid-cols-2 gap-3 mb-10">
             {active.services.map((s, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-3 px-4 py-3 rounded-xl bg-secondary/50 border border-border hover:border-primary/30 hover:bg-primary/5 transition-all duration-200 group"
-              >
-                <span className="text-primary group-hover:scale-110 transition-transform shrink-0">
-                  {s.icon}
-                </span>
+              <div key={i} className="flex items-center gap-3 px-4 py-3 rounded-xl bg-secondary/50 border border-border hover:border-primary/30 hover:bg-primary/5 transition-all duration-200 group">
+                <span className="text-primary group-hover:scale-110 transition-transform shrink-0">{s.icon}</span>
                 <span className="text-sm text-foreground">{s.label[lang]}</span>
                 <ChevronRight className="w-3.5 h-3.5 text-muted-foreground ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             ))}
           </div>
 
-          {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <button
-              onClick={() => setShowForm(true)}
-              className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-primary-foreground font-bold px-6 py-4 hover:brightness-110 transition-all animate-pulse-glow"
-            >
+            <button onClick={() => setShowForm(true)} className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-primary-foreground font-bold px-6 py-4 hover:brightness-110 transition-all animate-pulse-glow">
               <Send className="w-4 h-4" />
               {labels.requestProposal[lang]}
             </button>
-            <a
-              href="https://calendly.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl border border-primary text-primary font-bold px-6 py-4 hover:bg-primary/10 transition-colors"
-            >
+            <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl border border-primary text-primary font-bold px-6 py-4 hover:bg-primary/10 transition-colors">
               <CalendarDays className="w-4 h-4" />
               {labels.scheduleCall[lang]}
             </a>
@@ -205,67 +162,34 @@ const ServicesSection = () => {
         </div>
       </div>
 
-      {/* Proposal Modal */}
       {showForm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm">
           <div className="glass-card rounded-2xl p-8 w-full max-w-md relative">
-            <button
-              onClick={() => setShowForm(false)}
-              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
-            >
+            <button onClick={() => setShowForm(false)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors">
               <X className="w-5 h-5" />
             </button>
             <h3 className="font-display text-xl font-bold mb-6">{labels.formTitle[lang]}</h3>
             {submitted ? (
-              <div className="text-center py-8 text-success font-semibold text-lg">
-                ✅ {labels.thanks[lang]}
-              </div>
+              <div className="text-center py-8 text-success font-semibold text-lg">✅ {labels.thanks[lang]}</div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="text-xs text-muted-foreground mb-1 block">{labels.name[lang]}</label>
-                  <input
-                    required
-                    maxLength={100}
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full rounded-lg bg-secondary border border-border text-foreground px-4 py-2.5 text-sm focus:outline-none focus:border-primary transition-colors"
-                  />
+                  <input required maxLength={100} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full rounded-lg bg-secondary border border-border text-foreground px-4 py-2.5 text-sm focus:outline-none focus:border-primary transition-colors" />
                 </div>
                 <div>
                   <label className="text-xs text-muted-foreground mb-1 block">{labels.email[lang]}</label>
-                  <input
-                    required
-                    type="email"
-                    maxLength={255}
-                    value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full rounded-lg bg-secondary border border-border text-foreground px-4 py-2.5 text-sm focus:outline-none focus:border-primary transition-colors"
-                  />
+                  <input required type="email" maxLength={255} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full rounded-lg bg-secondary border border-border text-foreground px-4 py-2.5 text-sm focus:outline-none focus:border-primary transition-colors" />
                 </div>
                 <div>
                   <label className="text-xs text-muted-foreground mb-1 block">{labels.company[lang]}</label>
-                  <input
-                    maxLength={100}
-                    value={form.company}
-                    onChange={(e) => setForm({ ...form, company: e.target.value })}
-                    className="w-full rounded-lg bg-secondary border border-border text-foreground px-4 py-2.5 text-sm focus:outline-none focus:border-primary transition-colors"
-                  />
+                  <input maxLength={100} value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="w-full rounded-lg bg-secondary border border-border text-foreground px-4 py-2.5 text-sm focus:outline-none focus:border-primary transition-colors" />
                 </div>
                 <div>
                   <label className="text-xs text-muted-foreground mb-1 block">{labels.interest[lang]}</label>
-                  <textarea
-                    rows={4}
-                    maxLength={1000}
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full rounded-lg bg-secondary border border-border text-foreground px-4 py-2.5 text-sm focus:outline-none focus:border-primary transition-colors resize-none"
-                  />
+                  <textarea rows={4} maxLength={1000} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full rounded-lg bg-secondary border border-border text-foreground px-4 py-2.5 text-sm focus:outline-none focus:border-primary transition-colors resize-none" />
                 </div>
-                <button
-                  type="submit"
-                  className="w-full rounded-xl bg-primary text-primary-foreground font-bold py-3 hover:brightness-110 transition-all"
-                >
+                <button type="submit" className="w-full rounded-xl bg-primary text-primary-foreground font-bold py-3 hover:brightness-110 transition-all">
                   {labels.send[lang]}
                 </button>
               </form>

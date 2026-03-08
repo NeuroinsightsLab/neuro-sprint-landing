@@ -1,5 +1,3 @@
-export type Lang = "es" | "en" | "ca";
-
 const translations = {
   nav: {
     problem: { es: "Problema", en: "Problem", ca: "Problema" },
@@ -42,42 +40,42 @@ const translations = {
     traditional: { es: "Focus Groups Tradicionales", en: "Traditional Focus Groups", ca: "Focus Groups Tradicionals" },
     neuro: { es: "NeuroSprint™", en: "NeuroSprint™", ca: "NeuroSprint™" },
     rows: {
-      time: { 
-        problem: { es: "Meses de espera", en: "Months of waiting", ca: "Mesos d'espera" }, 
-        solution: { es: "48 horas", en: "48 hours", ca: "48 hores" } 
+      time: {
+        problem: { es: "Meses de espera", en: "Months of waiting", ca: "Mesos d'espera" },
+        solution: { es: "48 horas", en: "48 hours", ca: "48 hores" },
       },
-      data: { 
-        problem: { es: "Datos subjetivos", en: "Subjective data", ca: "Dades subjectives" }, 
-        solution: { es: "Datos objetivos", en: "Objective data", ca: "Dades objectives" } 
+      data: {
+        problem: { es: "Datos subjetivos", en: "Subjective data", ca: "Dades subjectives" },
+        solution: { es: "Datos objetivos", en: "Objective data", ca: "Dades objectives" },
       },
-      cost: { 
-        problem: { es: "€50.000+", en: "€50,000+", ca: "€50.000+" }, 
-        solution: { es: "Desde €2.500", en: "From €2,500", ca: "Des de €2.500" } 
+      cost: {
+        problem: { es: "€50.000+", en: "€50,000+", ca: "€50.000+" },
+        solution: { es: "Desde €2.500", en: "From €2,500", ca: "Des de €2.500" },
       },
-      insight: { 
-        problem: { es: "Opiniones declaradas", en: "Stated opinions", ca: "Opinions declarades" }, 
-        solution: { es: "Atracción real (95% subconsciente)", en: "Real attraction (95% subconscious)", ca: "Atracció real (95% subconscient)" } 
+      insight: {
+        problem: { es: "Opiniones declaradas", en: "Stated opinions", ca: "Opinions declarades" },
+        solution: { es: "Atracción real (95% subconsciente)", en: "Real attraction (95% subconscious)", ca: "Atracció real (95% subconscient)" },
       },
     },
   },
   howItWorks: {
     title: { es: "Cómo Funciona", en: "How It Works", ca: "Com Funciona" },
     steps: [
-      { 
-        title: { es: "Envía tu Asset", en: "Send Your Asset", ca: "Envia el teu Asset" }, 
-        desc: { es: "Packaging, homepage o creatividad", en: "Packaging, homepage or creative", ca: "Packaging, homepage o creativitat" } 
+      {
+        title: { es: "Envía tu Asset", en: "Send Your Asset", ca: "Envia el teu Asset" },
+        desc: { es: "Packaging, homepage o creatividad", en: "Packaging, homepage or creative", ca: "Packaging, homepage o creativitat" },
       },
-      { 
-        title: { es: "Test Remoto", en: "Remote Test", ca: "Test Remot" }, 
-        desc: { es: "15 usuarios con eye-tracking y biosensores", en: "15 users with eye-tracking & biosensors", ca: "15 usuaris amb eye-tracking i biosensors" } 
+      {
+        title: { es: "Test Remoto", en: "Remote Test", ca: "Test Remot" },
+        desc: { es: "15 usuarios con eye-tracking y biosensores", en: "15 users with eye-tracking & biosensors", ca: "15 usuaris amb eye-tracking i biosensors" },
       },
-      { 
-        title: { es: "Análisis IA", en: "AI Analysis", ca: "Anàlisi IA" }, 
-        desc: { es: "NeuroScore™ generado automáticamente", en: "NeuroScore™ generated automatically", ca: "NeuroScore™ generat automàticament" } 
+      {
+        title: { es: "Análisis IA", en: "AI Analysis", ca: "Anàlisi IA" },
+        desc: { es: "NeuroScore™ generado automáticamente", en: "NeuroScore™ generated automatically", ca: "NeuroScore™ generat automàticament" },
       },
-      { 
-        title: { es: "Informe 48h", en: "48h Report", ca: "Informe 48h" }, 
-        desc: { es: "PDF con heatmaps, métricas y 3 acciones", en: "PDF with heatmaps, metrics & 3 actions", ca: "PDF amb heatmaps, mètriques i 3 accions" } 
+      {
+        title: { es: "Informe 48h", en: "48h Report", ca: "Informe 48h" },
+        desc: { es: "PDF con heatmaps, métricas y 3 acciones", en: "PDF with heatmaps, metrics & 3 actions", ca: "PDF amb heatmaps, mètriques i 3 accions" },
       },
     ],
   },
@@ -251,6 +249,6 @@ const translations = {
   footer: {
     rights: { es: "Todos los derechos reservados", en: "All rights reserved", ca: "Tots els drets reservats" },
   },
-} as const;
+};
 
 export default translations;

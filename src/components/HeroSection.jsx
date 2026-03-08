@@ -8,13 +8,11 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background glow */}
       <div className="absolute inset-0 hero-glow opacity-50" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text */}
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-4 py-1.5 text-xs font-medium text-primary">
               <Eye className="w-3.5 h-3.5" />
@@ -37,7 +35,6 @@ const HeroSection = () => {
                 {t.hero.cta[lang]}
               </a>
             </div>
-            {/* Mini stats */}
             <div className="flex gap-8 pt-4 opacity-0 animate-fade-up-delay-3">
               {[
                 { value: "95%", label: { es: "Inconsciente", en: "Unconscious", ca: "Inconscient" } },
@@ -52,12 +49,10 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Heatmap Image */}
           <div className="relative opacity-0 animate-fade-up-delay-2">
             <div className="glow-border rounded-2xl overflow-hidden">
               <img src={heatmapImg} alt="Eye-tracking heatmap" className="w-full rounded-2xl" />
             </div>
-            {/* Floating badge */}
             <div className="absolute -bottom-4 -left-4 glass-card rounded-xl px-4 py-3 flex items-center gap-3">
               <Activity className="w-5 h-5 text-primary" />
               <div>

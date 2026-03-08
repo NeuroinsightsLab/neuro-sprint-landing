@@ -11,7 +11,6 @@ const trustNumbers = [
 
 const SocialProof = () => {
   const { lang } = useLang();
-
   const logos = ["Zara", "Glovo", "TechStartup Milano"];
 
   return (
@@ -21,7 +20,6 @@ const SocialProof = () => {
           {t.social.title[lang]}
         </h2>
 
-        {/* Trust numbers */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16">
           {trustNumbers.map((n, i) => (
             <div key={i} className="glass-card rounded-2xl p-6 text-center">
@@ -33,7 +31,6 @@ const SocialProof = () => {
           ))}
         </div>
 
-        {/* Logos */}
         <div className="flex justify-center gap-12 mb-16 flex-wrap">
           {logos.map((name) => (
             <div key={name} className="px-6 py-3 rounded-xl bg-secondary text-muted-foreground font-display font-semibold text-lg">
@@ -42,7 +39,6 @@ const SocialProof = () => {
           ))}
         </div>
 
-        {/* Testimonial */}
         <div className="max-w-2xl mx-auto glass-card rounded-2xl p-8 text-center relative">
           <Quote className="w-8 h-8 text-primary/30 mx-auto mb-4" />
           <p className="text-lg text-foreground italic mb-4">
@@ -51,7 +47,6 @@ const SocialProof = () => {
           <p className="text-sm text-muted-foreground">— {t.social.testimonial.author[lang]}</p>
         </div>
 
-        {/* Metric */}
         <div className="flex items-center justify-center gap-3 mt-12">
           <TrendingUp className="w-6 h-6 text-success" />
           <span className="text-xl font-display font-bold text-gradient">
@@ -64,4 +59,3 @@ const SocialProof = () => {
 };
 
 export default SocialProof;
-

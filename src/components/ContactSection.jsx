@@ -1,10 +1,8 @@
 import { useLang } from "@/lib/LanguageContext";
 import { MapPin, Mail, Phone, Linkedin, CalendarDays, Send } from "lucide-react";
 
-type Lang = "es" | "en" | "ca";
-
 const ContactSection = () => {
-  const { lang } = useLang() as { lang: Lang };
+  const { lang } = useLang();
 
   const labels = {
     title: { es: "Contáctanos", en: "Contact Us", ca: "Contacta'ns" },
@@ -29,16 +27,11 @@ const ContactSection = () => {
       <div className="absolute inset-0 hero-glow opacity-15" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-14">
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-            {labels.title[lang]}
-          </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-            {labels.subtitle[lang]}
-          </p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">{labels.title[lang]}</h2>
+          <p className="text-muted-foreground max-w-xl mx-auto text-lg">{labels.subtitle[lang]}</p>
         </div>
 
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-          {/* Contact info */}
           <div className="glass-card rounded-2xl p-8 flex flex-col gap-6">
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
@@ -56,9 +49,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">{labels.email[lang]}</div>
-                <a href={`mailto:${labels.emailValue}`} className="font-medium text-foreground hover:text-primary transition-colors">
-                  {labels.emailValue}
-                </a>
+                <a href={`mailto:${labels.emailValue}`} className="font-medium text-foreground hover:text-primary transition-colors">{labels.emailValue}</a>
               </div>
             </div>
 
@@ -68,9 +59,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">{labels.phone[lang]}</div>
-                <a href={`tel:${labels.phoneValue.replace(/\s/g, "")}`} className="font-medium text-foreground hover:text-primary transition-colors">
-                  {labels.phoneValue}
-                </a>
+                <a href={`tel:${labels.phoneValue.replace(/\s/g, "")}`} className="font-medium text-foreground hover:text-primary transition-colors">{labels.phoneValue}</a>
               </div>
             </div>
 
@@ -80,42 +69,22 @@ const ContactSection = () => {
               </div>
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">{labels.linkedin[lang]}</div>
-                <a
-                  href="https://linkedin.com/company/decoder-agency"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-foreground hover:text-primary transition-colors"
-                >
-                  /decoder-agency
-                </a>
+                <a href="https://linkedin.com/company/decoder-agency" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground hover:text-primary transition-colors">/decoder-agency</a>
               </div>
             </div>
           </div>
 
-          {/* CTAs */}
           <div className="flex flex-col gap-5 justify-center">
-            <a
-              href="https://calendly.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 rounded-xl bg-primary text-primary-foreground font-bold px-8 py-5 text-lg hover:brightness-110 transition-all animate-pulse-glow"
-            >
+            <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 rounded-xl bg-primary text-primary-foreground font-bold px-8 py-5 text-lg hover:brightness-110 transition-all animate-pulse-glow">
               <CalendarDays className="w-5 h-5" />
               {labels.schedule[lang]}
             </a>
-            <button
-              onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
-              className="flex items-center justify-center gap-3 rounded-xl border border-primary text-primary font-bold px-8 py-5 text-lg hover:bg-primary/10 transition-colors"
-            >
+            <button onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })} className="flex items-center justify-center gap-3 rounded-xl border border-primary text-primary font-bold px-8 py-5 text-lg hover:bg-primary/10 transition-colors">
               <Send className="w-5 h-5" />
               {labels.request[lang]}
             </button>
             <p className="text-center text-xs text-muted-foreground">
-              {lang === "es"
-                ? "Respuesta garantizada en menos de 24 horas"
-                : lang === "en"
-                ? "Response guaranteed within 24 hours"
-                : "Resposta garantida en menys de 24 hores"}
+              {lang === "es" ? "Respuesta garantizada en menos de 24 horas" : lang === "en" ? "Response guaranteed within 24 hours" : "Resposta garantida en menys de 24 hores"}
             </p>
           </div>
         </div>

@@ -20,11 +20,9 @@ const HowItWorks = () => {
             const Icon = icons[i];
             return (
               <div key={i} className="relative glass-card rounded-2xl p-6 text-center group hover:glow-border transition-all duration-300">
-                {/* Step number */}
                 <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">
                   {i + 1}
                 </div>
-                {/* Connector line */}
                 {i < 3 && (
                   <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-border" />
                 )}

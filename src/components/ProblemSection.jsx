@@ -14,7 +14,6 @@ const ProblemSection = () => {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {/* Problem Column */}
           <div className="glass-card rounded-2xl p-8 border-destructive/30">
             <h3 className="text-lg font-semibold text-destructive mb-6 flex items-center gap-2">
               <X className="w-5 h-5" />
@@ -30,7 +29,6 @@ const ProblemSection = () => {
             </div>
           </div>
 
-          {/* Solution Column */}
           <div className="glass-card rounded-2xl p-8 glow-border">
             <h3 className="text-lg font-semibold text-success mb-6 flex items-center gap-2">
               <Check className="w-5 h-5" />

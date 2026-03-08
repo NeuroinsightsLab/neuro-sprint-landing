@@ -20,35 +20,17 @@ const UseCasesSection = () => {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {t.useCases.cases.map((c, i) => (
-            <div
-              key={i}
-              className="glass-card rounded-2xl p-8 flex flex-col group hover:glow-border transition-all duration-300"
-            >
-              {/* Emoji icon */}
+            <div key={i} className="glass-card rounded-2xl p-8 flex flex-col group hover:glow-border transition-all duration-300">
               <div className="text-4xl mb-4">{c.icon}</div>
-
-              {/* Group badge */}
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-bold uppercase tracking-widest text-primary">
-                  {c.group[lang]}
-                </span>
+                <span className="text-xs font-bold uppercase tracking-widest text-primary">{c.group[lang]}</span>
                 <span className="h-px flex-1 bg-border" />
               </div>
-
-              {/* Tag */}
               <span className="inline-block rounded-full bg-primary/10 border border-primary/20 px-3 py-1 text-xs font-medium text-primary mb-4 self-start">
                 {c.tag[lang]}
               </span>
-
-              <h3 className="font-display text-lg font-bold text-foreground mb-3">
-                {c.title[lang]}
-              </h3>
-
-              <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-6">
-                {c.desc[lang]}
-              </p>
-
-              {/* Metrics */}
+              <h3 className="font-display text-lg font-bold text-foreground mb-3">{c.title[lang]}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-6">{c.desc[lang]}</p>
               <div className="grid grid-cols-2 gap-3 border-t border-border pt-5">
                 {c.metrics.map((m, mi) => (
                   <div key={mi} className="text-center">

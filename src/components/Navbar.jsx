@@ -1,13 +1,12 @@
 import { useLang } from "@/lib/LanguageContext";
-import type { Lang } from "@/lib/i18n";
 import t from "@/lib/i18n";
 
-const langLabels: Record<Lang, string> = { es: "ES", en: "EN", ca: "CA" };
+const langLabels = { es: "ES", en: "EN", ca: "CA" };
 
 const Navbar = () => {
   const { lang, setLang } = useLang();
 
-  const scrollTo = (id: string) => {
+  const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -16,7 +15,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <span className="font-display text-xl font-bold text-gradient">Decoder</span>
         <div className="hidden md:flex items-center gap-6">
-          {(["problem", "howItWorks", "proof", "usecases", "eaa", "team", "services", "pricing"] as const).map((key) => (
+          {["problem", "howItWorks", "proof", "usecases", "eaa", "team", "services", "pricing"].map((key) => (
             <button
               key={key}
               onClick={() => scrollTo(key === "proof" ? "social" : key)}
@@ -31,7 +30,7 @@ const Navbar = () => {
           ))}
         </div>
         <div className="flex items-center gap-1 rounded-lg bg-secondary p-1">
-          {(Object.keys(langLabels) as Lang[]).map((l) => (
+          {Object.keys(langLabels).map((l) => (
             <button
               key={l}
               onClick={() => setLang(l)}
