@@ -33,53 +33,34 @@ const ContactSection = () => {
 
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
           <div className="glass-card rounded-2xl p-8 flex flex-col gap-6">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-                <MapPin className="w-4 h-4 text-primary" />
+            {[
+              { Icon: MapPin, label: labels.location[lang], value: labels.address },
+              { Icon: Mail, label: labels.email[lang], value: labels.emailValue, href: `mailto:${labels.emailValue}` },
+              { Icon: Phone, label: labels.phone[lang], value: labels.phoneValue, href: `tel:${labels.phoneValue.replace(/\s/g, "")}` },
+              { Icon: Linkedin, label: labels.linkedin[lang], value: "/decoder-agency", href: "https://linkedin.com/company/decoder-agency", external: true },
+            ].map(({ Icon, label, value, href, external }, i) => (
+              <div key={i} className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+                  <Icon className="w-4 h-4 text-primary" />
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">{label}</div>
+                  {href ? (
+                    <a href={href} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} className="font-medium text-foreground hover:text-primary transition-colors">{value}</a>
+                  ) : (
+                    <div className="font-medium text-foreground">{value}</div>
+                  )}
+                </div>
               </div>
-              <div>
-                <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">{labels.location[lang]}</div>
-                <div className="font-medium text-foreground">{labels.address}</div>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-                <Mail className="w-4 h-4 text-primary" />
-              </div>
-              <div>
-                <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">{labels.email[lang]}</div>
-                <a href={`mailto:${labels.emailValue}`} className="font-medium text-foreground hover:text-primary transition-colors">{labels.emailValue}</a>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-                <Phone className="w-4 h-4 text-primary" />
-              </div>
-              <div>
-                <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">{labels.phone[lang]}</div>
-                <a href={`tel:${labels.phoneValue.replace(/\s/g, "")}`} className="font-medium text-foreground hover:text-primary transition-colors">{labels.phoneValue}</a>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-                <Linkedin className="w-4 h-4 text-primary" />
-              </div>
-              <div>
-                <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">{labels.linkedin[lang]}</div>
-                <a href="https://linkedin.com/company/decoder-agency" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground hover:text-primary transition-colors">/decoder-agency</a>
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className="flex flex-col gap-5 justify-center">
-            <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 rounded-xl bg-primary text-primary-foreground font-bold px-8 py-5 text-lg hover:brightness-110 transition-all animate-pulse-glow">
+            <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 rounded-full bg-primary text-primary-foreground font-bold px-8 py-5 text-lg hover:brightness-110 transition-all animate-pulse-glow">
               <CalendarDays className="w-5 h-5" />
               {labels.schedule[lang]}
             </a>
-            <button onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })} className="flex items-center justify-center gap-3 rounded-xl border border-primary text-primary font-bold px-8 py-5 text-lg hover:bg-primary/10 transition-colors">
+            <button onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })} className="flex items-center justify-center gap-3 rounded-full border border-primary text-primary font-bold px-8 py-5 text-lg hover:bg-primary/10 transition-colors">
               <Send className="w-5 h-5" />
               {labels.request[lang]}
             </button>

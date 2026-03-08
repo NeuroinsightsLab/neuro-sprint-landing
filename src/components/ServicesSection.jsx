@@ -150,11 +150,11 @@ const ServicesSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button onClick={() => setShowForm(true)} className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-primary-foreground font-bold px-6 py-4 hover:brightness-110 transition-all animate-pulse-glow">
+            <button onClick={() => setShowForm(true)} className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground font-bold px-6 py-4 hover:brightness-110 transition-all animate-pulse-glow">
               <Send className="w-4 h-4" />
               {labels.requestProposal[lang]}
             </button>
-            <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl border border-primary text-primary font-bold px-6 py-4 hover:bg-primary/10 transition-colors">
+            <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-primary text-primary font-bold px-6 py-4 hover:bg-primary/10 transition-colors">
               <CalendarDays className="w-4 h-4" />
               {labels.scheduleCall[lang]}
             </a>
