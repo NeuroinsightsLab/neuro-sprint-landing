@@ -4,7 +4,7 @@ import {
   FlaskConical, Users, BarChart3, Microscope, Database, Globe, BookOpen, UserSearch, TestTube, LayoutGrid,
   Code2, Bot, Blocks, TrendingUp, Cpu, Wrench, Package, Globe2,
   Map, ShieldCheck, Accessibility, Lightbulb, Package2, Palette,
-  ChevronRight, Send, CalendarDays, X
+  ChevronRight, Send, CalendarDays
 } from "lucide-react";
 
 const categories = [
@@ -72,13 +72,9 @@ const categories = [
   },
 ];
 
-const ServicesSection = () => {
+const ServicesSection = ({ onOpenForm }) => {
   const { lang } = useLang();
   const [activeTab, setActiveTab] = useState("ux");
-  const [showForm, setShowForm] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
-
   const labels = {
     title: { es: "Nuestros Servicios", en: "Our Services", ca: "Els Nostres Serveis" },
     subtitle: {
@@ -88,22 +84,9 @@ const ServicesSection = () => {
     },
     requestProposal: { es: "Solicitar Propuesta", en: "Request Proposal", ca: "Sol·licitar Proposta" },
     scheduleCall: { es: "Agendar Llamada", en: "Schedule a Call", ca: "Agendar Trucada" },
-    formTitle: { es: "Solicitar Propuesta", en: "Request a Proposal", ca: "Sol·licitar Proposta" },
-    name: { es: "Nombre", en: "Name", ca: "Nom" },
-    email: { es: "Email", en: "Email", ca: "Email" },
-    company: { es: "Empresa", en: "Company", ca: "Empresa" },
-    interest: { es: "¿En qué podemos ayudarte?", en: "How can we help you?", ca: "En què podem ajudar-te?" },
-    send: { es: "Enviar", en: "Send", ca: "Enviar" },
-    thanks: { es: "¡Gracias! Te contactaremos pronto.", en: "Thanks! We'll be in touch soon.", ca: "Gràcies! Et contactarem aviat." },
   };
 
   const active = categories.find((c) => c.id === activeTab);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => { setShowForm(false); setSubmitted(false); setForm({ name: "", email: "", company: "", message: "" }); }, 3000);
-  };
 
   return (
     <section id="services" className="py-24 relative">
@@ -119,7 +102,7 @@ const ServicesSection = () => {
             <button
               key={cat.id}
               onClick={() => setActiveTab(cat.id)}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
+              className={`flex items-center gap-2 px-5 py-3 min-h-[44px] rounded-full text-sm font-semibold transition-all duration-200 ${
                 activeTab === cat.id
                   ? "bg-primary text-primary-foreground shadow-[0_0_20px_-5px_hsl(var(--primary)/0.5)]"
                   : "bg-secondary text-muted-foreground hover:text-foreground"
@@ -150,11 +133,11 @@ const ServicesSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button onClick={() => setShowForm(true)} className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground font-bold px-6 py-4 hover:brightness-110 transition-all animate-pulse-glow">
+            <button onClick={onOpenForm} className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground font-bold px-6 py-4 hover:brightness-110 transition-all animate-pulse-glow">
               <Send className="w-4 h-4" />
               {labels.requestProposal[lang]}
             </button>
-            <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-primary text-primary font-bold px-6 py-4 hover:bg-primary/10 transition-colors">
+            <a href="https://calendly.com/decoder-agency" target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-primary text-primary font-bold px-6 py-4 hover:bg-primary/10 transition-colors">
               <CalendarDays className="w-4 h-4" />
               {labels.scheduleCall[lang]}
             </a>
@@ -162,41 +145,6 @@ const ServicesSection = () => {
         </div>
       </div>
 
-      {showForm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm">
-          <div className="glass-card rounded-2xl p-8 w-full max-w-md relative">
-            <button onClick={() => setShowForm(false)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors">
-              <X className="w-5 h-5" />
-            </button>
-            <h3 className="font-display text-xl font-bold mb-6">{labels.formTitle[lang]}</h3>
-            {submitted ? (
-              <div className="text-center py-8 text-success font-semibold text-lg">✅ {labels.thanks[lang]}</div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="text-xs text-muted-foreground mb-1 block">{labels.name[lang]}</label>
-                  <input required maxLength={100} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full rounded-lg bg-secondary border border-border text-foreground px-4 py-2.5 text-sm focus:outline-none focus:border-primary transition-colors" />
-                </div>
-                <div>
-                  <label className="text-xs text-muted-foreground mb-1 block">{labels.email[lang]}</label>
-                  <input required type="email" maxLength={255} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full rounded-lg bg-secondary border border-border text-foreground px-4 py-2.5 text-sm focus:outline-none focus:border-primary transition-colors" />
-                </div>
-                <div>
-                  <label className="text-xs text-muted-foreground mb-1 block">{labels.company[lang]}</label>
-                  <input maxLength={100} value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="w-full rounded-lg bg-secondary border border-border text-foreground px-4 py-2.5 text-sm focus:outline-none focus:border-primary transition-colors" />
-                </div>
-                <div>
-                  <label className="text-xs text-muted-foreground mb-1 block">{labels.interest[lang]}</label>
-                  <textarea rows={4} maxLength={1000} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full rounded-lg bg-secondary border border-border text-foreground px-4 py-2.5 text-sm focus:outline-none focus:border-primary transition-colors resize-none" />
-                </div>
-                <button type="submit" className="w-full rounded-xl bg-primary text-primary-foreground font-bold py-3 hover:brightness-110 transition-all">
-                  {labels.send[lang]}
-                </button>
-              </form>
-            )}
-          </div>
-        </div>
-      )}
     </section>
   );
 };

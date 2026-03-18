@@ -55,6 +55,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        score: {
+          critical: "hsl(var(--score-critical))",
+          risky: "hsl(var(--score-risky))",
+          good: "hsl(var(--score-good))",
+          strong: "hsl(var(--score-strong))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

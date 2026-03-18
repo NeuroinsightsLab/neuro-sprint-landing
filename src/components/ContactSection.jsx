@@ -1,7 +1,7 @@
 import { useLang } from "@/lib/LanguageContext";
 import { MapPin, Mail, Phone, Linkedin, CalendarDays, Send } from "lucide-react";
 
-const ContactSection = () => {
+const ContactSection = ({ onOpenForm }) => {
   const { lang } = useLang();
 
   const labels = {
@@ -56,11 +56,11 @@ const ContactSection = () => {
           </div>
 
           <div className="flex flex-col gap-5 justify-center">
-            <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 rounded-full bg-primary text-primary-foreground font-bold px-8 py-5 text-lg hover:brightness-110 transition-all animate-pulse-glow">
+            <a href="https://calendly.com/decoder-agency" target="_blank" rel="noopener noreferrer" aria-label={`${labels.schedule[lang]} (opens in new tab)`} className="flex items-center justify-center gap-3 rounded-full bg-primary text-primary-foreground font-bold px-8 py-5 text-lg hover:brightness-110 transition-all animate-pulse-glow">
               <CalendarDays className="w-5 h-5" />
               {labels.schedule[lang]}
             </a>
-            <button onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })} className="flex items-center justify-center gap-3 rounded-full border border-primary text-primary font-bold px-8 py-5 text-lg hover:bg-primary/10 transition-colors">
+            <button onClick={onOpenForm} className="flex items-center justify-center gap-3 rounded-full border border-primary text-primary font-bold px-8 py-5 text-lg hover:bg-primary/10 transition-colors">
               <Send className="w-5 h-5" />
               {labels.request[lang]}
             </button>

@@ -2,7 +2,7 @@ import { useLang } from "@/lib/LanguageContext";
 import t from "@/lib/i18n";
 import { Check, Zap, Clock } from "lucide-react";
 
-const PricingSection = () => {
+const PricingSection = ({ onOpenForm }) => {
   const { lang } = useLang();
 
   return (
@@ -29,9 +29,9 @@ const PricingSection = () => {
                 </li>
               ))}
             </ul>
-            <a href="#" className="block text-center rounded-full border border-primary text-primary font-semibold px-6 py-3 hover:bg-primary/10 transition-colors">
+            <button onClick={onOpenForm} className="block w-full text-center rounded-full border border-primary text-primary font-semibold px-6 py-3 hover:bg-primary/10 transition-colors">
               {t.pricing.cta[lang]}
-            </a>
+            </button>
           </div>
 
           <div className="glass-card rounded-2xl p-8 flex flex-col glow-border relative">
@@ -48,10 +48,10 @@ const PricingSection = () => {
                 </li>
               ))}
             </ul>
-            <a href="#" className="block text-center rounded-full bg-primary text-primary-foreground font-semibold px-6 py-3 hover:brightness-110 transition-all animate-pulse-glow">
+            <button onClick={onOpenForm} className="block w-full text-center rounded-full bg-primary text-primary-foreground font-semibold px-6 py-3 hover:brightness-110 transition-all animate-pulse-glow">
               <Zap className="w-4 h-4 inline mr-2" />
               {t.pricing.cta[lang]}
-            </a>
+            </button>
           </div>
         </div>
       </div>

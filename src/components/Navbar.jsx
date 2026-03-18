@@ -28,7 +28,7 @@ const Navbar = () => {
             <button
               key={key}
               onClick={() => scrollTo(key === "proof" ? "social" : key)}
-              className={`text-sm transition-colors ${
+              className={`text-sm py-2 min-h-[44px] transition-colors ${
                 key === "eaa"
                   ? "text-primary hover:text-primary/80 font-semibold"
                   : "text-muted-foreground hover:text-foreground"
@@ -40,12 +40,14 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-0.5 rounded-full bg-secondary p-1">
+          <div className="flex items-center gap-1 rounded-full bg-secondary p-1">
             {Object.keys(langLabels).map((l) => (
               <button
                 key={l}
                 onClick={() => setLang(l)}
-                className={`px-3 py-1 text-xs font-medium rounded-full transition-all ${
+                aria-label={`Switch language to ${l.toUpperCase()}`}
+                aria-pressed={lang === l}
+                className={`px-3 py-2 min-w-[44px] min-h-[44px] text-xs font-medium rounded-full transition-all flex items-center justify-center ${
                   lang === l
                     ? "bg-primary text-primary-foreground"
                     : "text-muted-foreground hover:text-foreground"
@@ -58,7 +60,9 @@ const Navbar = () => {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden text-foreground"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            className="md:hidden text-foreground min-w-[44px] min-h-[44px] flex items-center justify-center"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
