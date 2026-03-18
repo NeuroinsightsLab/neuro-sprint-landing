@@ -1,9 +1,10 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Cookie } from "lucide-react";
 import { clearConsent } from "@/lib/cookieConsent";
 
 const PrivacyPolicy = () => {
+  const navigate = useNavigate();
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
@@ -204,7 +205,7 @@ const PrivacyPolicy = () => {
               <p className="text-xs text-muted-foreground">
                 You can change or withdraw your cookie consent at any time using the{" "}
                 <button
-                  onClick={() => { clearConsent(); window.scrollTo(0,0); window.location.href = "/"; }}
+                  onClick={() => { clearConsent(); navigate("/"); }}
                   className="text-primary underline underline-offset-2 hover:text-primary/80"
                 >
                   Cookie Settings
