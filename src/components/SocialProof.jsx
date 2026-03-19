@@ -11,7 +11,7 @@ const trustNumbers = [
 
 const SocialProof = () => {
   const { lang } = useLang();
-  const logos = ["Zara", "Glovo", "TechStartup Milano"];
+  const logos = ["Crypto App", "Fashion Startup", "AI Agents Platfrom"];
 
   return (
     <section id="social" className="py-24">
