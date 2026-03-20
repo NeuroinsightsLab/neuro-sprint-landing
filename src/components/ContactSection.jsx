@@ -19,7 +19,7 @@ const ContactSection = ({ onOpenForm }) => {
     linkedin: { es: "LinkedIn", en: "LinkedIn", ca: "LinkedIn" },
     address: "Barcelona, España",
     emailValue: "hello@decoder.digital",
-    phoneValue: "+34 600 000 000",
+    phoneValue: "+34603677652",
   };
 
   return (
