@@ -304,8 +304,8 @@ const ProposalForm = ({ open, onClose }) => {
                 <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
                 <span>
                   {labels.error[lang]}
-                  <a href="mailto:hello@decoder.agency" className="underline underline-offset-2 hover:text-destructive/80">
-                    hello@decoder.agency
+                  <a href="mailto:hello@decoder.digital" className="underline underline-offset-2 hover:text-destructive/80">
+                    hello@decoder.digital
                   </a>
                 </span>
               </p>

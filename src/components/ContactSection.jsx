@@ -18,7 +18,7 @@ const ContactSection = ({ onOpenForm }) => {
     request: { es: "Solicitar Propuesta", en: "Request Proposal", ca: "Sol·licitar Proposta" },
     linkedin: { es: "LinkedIn", en: "LinkedIn", ca: "LinkedIn" },
     address: "Barcelona, España",
-    emailValue: "hello@decoder.agency",
+    emailValue: "hello@decoder.digital",
     phoneValue: "+34 600 000 000",
   };
 
