@@ -29,8 +29,8 @@ const PrivacyPolicy = () => {
             <p>
               Decoder Agency S.L. ("Decoder", "we", "us") is the data controller responsible for
               your personal data. Contact:{" "}
-              <a href="mailto:hello@decoder.agency" className="text-primary underline underline-offset-2">
-                hello@decoder.agency
+              <a href="mailto:hello@decoder.digital" className="text-primary underline underline-offset-2">
+                hello@decoder.digital
               </a>{" "}
               · Barcelona, España.
             </p>
@@ -106,8 +106,8 @@ const PrivacyPolicy = () => {
             </ul>
             <p className="mt-2">
               To exercise any of these rights, email{" "}
-              <a href="mailto:hello@decoder.agency" className="text-primary underline underline-offset-2">
-                hello@decoder.agency
+              <a href="mailto:hello@decoder.digital" className="text-primary underline underline-offset-2">
+                hello@decoder.digital
               </a>{" "}
               with the subject "GDPR Request".
             </p>
@@ -227,8 +227,8 @@ const PrivacyPolicy = () => {
             <h2 className="font-display text-xl font-semibold mb-3">10. Contact</h2>
             <p>
               Questions about this policy?{" "}
-              <a href="mailto:hello@decoder.agency" className="text-primary underline underline-offset-2">
-                hello@decoder.agency
+              <a href="mailto:hello@decoder.digital" className="text-primary underline underline-offset-2">
+                hello@decoder.digital
               </a>
             </p>
           </section>
